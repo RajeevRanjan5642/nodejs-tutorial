@@ -133,9 +133,8 @@
         console.log(path.parse(__filename));
         console.log(path.isAbsolute(__filename));
         console.log(path.join(__dirname,'data.json'));
-  
-
-  
-
-
-
+   
+## Callbacks
+- In JavaScript, functions are first class objects.
+- A function can be passed as an argument.
+- A function can be returned as values from other functions.
