@@ -186,3 +186,19 @@
   - Character encoding dictates how many bits to use to represent the number.
   - Example of a character encoding system is UTF-8.
   - UTF-8 states that 8 bits should be used to represent the code of any character in binary.
+ 
+  ## Streams & Buffers
+  - A stream is a sequence of data that is being moved from one point to another over time. for e.g. a stream of data over the internet being moved from one computer to another.
+  - Process streams of data in chunks as they arrive instead of waiting for the entire data to be available before processing.
+  - Node.js cannot control the pace at which data arrives in the stream. It can only decide when is the right time to send data for processing. If there is data already processed or too little data to process, Node.js puts the arriving data in buffer.
+  - Buffer contains raw binary data.
+ 
+        const buffer = new Buffer.from("Rajeev");
+
+        buffer.write("code");
+        
+        console.log(buffer.toJSON());
+        console.log(buffer);
+        console.log(buffer.toString());
+
+
