@@ -123,7 +123,8 @@
 
 ## Built-in Modules
 
-1. Path : provides utilities to work with files and directories.
+### Path Module 
+- provides utilities to work with files and directories.
 
         const path = require('node:path');
     
@@ -138,3 +139,40 @@
 - In JavaScript, functions are first class objects.
 - A function can be passed as an argument.
 - A function can be returned as values from other functions.
+- A function that is passed as an argument to another function is called a callback function.
+
+      function greet(name){
+          console.log(`Hi ${name}`);
+      }
+      
+      function higherOrderFunction(callback){
+          const name='Linda';
+          callback(name);
+      }
+      
+      higherOrderFunction(greet);
+
+- Asynchronous callback : A function that is executed after an asynchronous operation is finished.
+- For e.g. reading from a file, fetching data from database etc.
+- Node.js have an asynchronous nature to prevent blocking of execution.
+
+### Events Module
+- The events module allows us to work with events in Node.js.
+- An event is an action or an ocuurence that has happened in our application that we can respond to.
+- Using the events module, we can dispatch our own custom events and respond to those custom events in a non-blocking manner.
+
+      const EventEmitter = require('node:events');
+  
+      const emitter = new EventEmitter();
+
+      // event listener
+      emitter.on('order-pizza',(size,topping)=>{
+          console.log(`Order received! Baking a ${size} pizza with ${topping}.`);
+      });
+      
+      emitter.on('order-pizza',(size)=>{
+          console.log(`Serving a complementary drink!`)
+      })
+
+      // dispatch an event
+      emitter.emit('order-pizza','large','mushroom');
