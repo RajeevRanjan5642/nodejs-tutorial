@@ -176,3 +176,13 @@
 
       // dispatch an event
       emitter.emit('order-pizza','large','mushroom');
+
+  ## Character set & encoding
+  - Computers store and represent data in binary format which is a collection of 0s and 1s.
+  - To work with a piece of data, a computer needs to convert that data into its binary representation.
+  - In case of characters, computers will first convert the character to a number, then convert that number to its binary representation.
+  - Character Sets are predefined lists of characters with their numeric representation.
+  - Popular character sets - Unicode and ASCII
+  - Character encoding dictates how many bits to use to represent the number.
+  - Example of a character encoding system is UTF-8.
+  - UTF-8 states that 8 bits should be used to represent the code of any character in binary.
