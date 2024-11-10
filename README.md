@@ -54,17 +54,20 @@
 2. Write JavaScript in a file and run it using node command in the terminal.
 
 ## Module
-- A module is an encapsulated and reusable chunk of code that has its own context.
-- In Node.js, each file is treated as a separate module.
+- A module is an encapsulated and reusable chunk of code that has its own scope.
+- In Node.js, each file is treated as a separate module that is isolated by default.
+- To load a module into another file, we use the require function.
 - Types of modules:
   1. Local modules : Modules that we create in our application.
   2. Built-in modules : Modules that Node.js ships with out of the box.
   3. Third party modules : Modules written by other developers that we can use in our application.
-- CommonJS is a standard thaat states how a module should be structured and shared.
+- CommonJS is a standard that states how a module should be structured and shared.
+- Before a module's code is executed, Node.js will wrap it with a function wrapper (iife) that provides module scope. This saves us from having to worry about conflicting variables or functions.
+- IIFE allows us to repeat variable or function names without an conflicts.
 
-  
+## IIFE (Immediately Invoked Function Expression)
 
-
-
-
-
+    (function(){
+      const superHero = "Batman";
+      console.log(superHero);
+    })();
