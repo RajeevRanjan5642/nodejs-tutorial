@@ -60,7 +60,7 @@
 - The module is loaded and cached.
 - Types of modules:
   1. Local modules : Modules that we create in our application.
-  2. Built-in modules : Modules that Node.js ships with out of the box.
+  2. Built-in modules : Modules that Node.js ships with out of the box. They are also known as core modules.
   3. Third party modules : Modules written by other developers that we can use in our application.
 - CommonJS is a standard that states how a module should be structured and shared.
 - Before a module's code is executed, Node.js will wrap it with a function wrapper (IIFE) that provides module scope. This saves us from having to worry about conflicting variables or functions.
@@ -120,6 +120,20 @@
             "city":"Bhagalpur"
         }
       }
+
+## Built-in Modules
+
+1. Path : provides utilities to work with files and directories.
+
+        const path = require('node:path');
+    
+        console.log(path.basename(__filename));
+        console.log(path.basename(__dirname));
+        console.log(path.extname(__filename));
+        console.log(path.parse(__filename));
+        console.log(path.isAbsolute(__filename));
+        console.log(path.join(__dirname,'data.json'));
+  
 
   
 
