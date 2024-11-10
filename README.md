@@ -109,7 +109,7 @@
 #### math.mjs
 ![mjs1](https://github.com/RajeevRanjan5642/nodejs-tutorial/blob/main/mjs1.png)
 
-## Impoerting JSON
+## JSON
 - JSON stands for JavaScript Object Notation.
 - A data interchange format commonly used with web servers.
 
