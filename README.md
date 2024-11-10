@@ -83,8 +83,19 @@
         console.log(message, superHero);
       })();
 
-## CommonJS modules
+## CommonJS Modules
 
+#### index.js
+![cjs2](https://github.com/RajeevRanjan5642/nodejs-tutorial/blob/main/cjs2.png)
+
+#### math.js
+![cjs1](https://github.com/RajeevRanjan5642/nodejs-tutorial/blob/main/cjs1.png)
+![cjs3](https://github.com/RajeevRanjan5642/nodejs-tutorial/blob/main/cjs3.png)
+
+## ES Modules
+- ES Modules is the ECMAScript standard for modules.
+- It was introduced with ES2015.
+- Instead of module.exports, we use the export keyword.
 
 
 
