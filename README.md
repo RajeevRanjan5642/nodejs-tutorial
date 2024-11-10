@@ -97,5 +97,17 @@
 - It was introduced with ES2015.
 - Instead of module.exports, we use the export keyword.
 
+#### index.mjs
+![mjs3](https://github.com/RajeevRanjan5642/nodejs-tutorial/blob/main/mjs3.png)
+
+#### math.mjs
+![mjs2](https://github.com/RajeevRanjan5642/nodejs-tutorial/blob/main/mjs2.png)
+
+#### index.mjs
+![mjs4](https://github.com/RajeevRanjan5642/nodejs-tutorial/blob/main/mjs4.png)
+
+#### math.mjs
+![mjs1](https://github.com/RajeevRanjan5642/nodejs-tutorial/blob/main/mjs1.png)
+
 
 
