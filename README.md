@@ -53,7 +53,8 @@
 - Hence increasing the thread pool size can help improve the performance but is limited by the no. of available CPU cores.
 
 ## Code Execution in Node.js
-- 
+
+![code](https://github.com/RajeevRanjan5642/nodejs-tutorial/blob/main/Screenshot%202024-11-11%20200320.png)
 
 ## Difference b/w Node.js and Browser
 - In Node.js we don't have the document, window and all the other objects that are provided by the window.
