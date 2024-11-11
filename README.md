@@ -225,7 +225,7 @@
         }
       );
 
-#### fs promise module
+### fs promise module
 
       const fs = require("node:fs/promises");
       
@@ -274,6 +274,71 @@ async-await
       const writableStream = fs.createWriteStream("./greet2.txt");
       
       readableStream.pipe(writableStream);
+
+  ### HTTP Module
+  - The HTTP module allows creation of web servers that can transfer data over HTTP.
+    
+        const http = require("node:http");
+        
+        const server = http.createServer((req, res) => {
+          res.writeHead(200, { "Content-Type": "text/plain" });
+          res.end("Hello World");
+        });
+        
+        server.listen(3000,()=>{
+            console.log('Server is listening on port 3000');
+        });
+
+- JSON response
+
+      const server = http.createServer((req, res) => {
+        const superHero = {
+          firstName: "Bruce",
+          lastName: "Wayne",
+        };
+        res.writeHead(200, { "Content-Type": "application/json" });
+        res.end(JSON.stringify(superHero));
+      });
+
+- HTML response
+
+      const server = http.createServer((req, res) => {
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.end("<h1>Hello World</h1>");
+      });
+
+      const server = http.createServer((req, res) => {
+        res.writeHead(200, { "Content-Type": "text/html" });
+        fs.createReadStream(__dirname+"/index.html").pipe(res);
+      });
+
+- HTTP Routing
+
+      const http = require("node:http");
+      
+      const server = http.createServer((req, res) => {
+        const url = req.url;
+        switch (url){
+          case '/':
+              res.writeHead(200,{'Content-Type':'text/plain'});
+              res.end('This is home page.');
+              break;
+          case '/about':
+              res.writeHead(200,{'Content-Type':'text/plain'});
+              res.end('This is about page.');
+              break;
+          default:
+              res.writeHead(404,{'Content-Type':'text/plain'});
+              res.end('Page not found');
+        }
+      });
+      
+      server.listen(3000, () => {
+        console.log("Server is listening on port 3000");
+      });
+
+
+    
 
 
 
