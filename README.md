@@ -56,6 +56,12 @@
 
 ![code](https://github.com/RajeevRanjan5642/nodejs-tutorial/blob/main/Screenshot%202024-11-11%20200320.png)
 
+## Event Loop
+- It is a C program and is part of libuv.
+- A design pattern that coordinates the execution of synchronous and asynchronous code in Node.js.
+- 
+
+
 ## Difference b/w Node.js and Browser
 - In Node.js we don't have the document, window and all the other objects that are provided by the window.
 - In browser, we don't have filesystem access functionality that Node.js provides through its modules.
