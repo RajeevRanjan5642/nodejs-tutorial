@@ -201,4 +201,86 @@
         console.log(buffer);
         console.log(buffer.toString());
 
+### fs module
+- fs module allows us to work with file system on our computer.
+
+      const fs = require("node:fs");
+      
+      const data = fs.readFileSync("./test.txt", "utf-8");
+      console.log(data);
+      
+      fs.readFile("./test.txt", "utf-8", (err, data) => {
+        if (err) console.log(err);
+        else console.log(data);
+      });
+      
+      fs.writeFileSync("./greet.txt", "Bonjour");
+      
+      fs.writeFile(
+        "./greet.txt",
+        "Good Morning",
+        /*{flag:"a"},*/ (err) => {
+          if (err) console.log(err);
+          else console.log("file written");
+        }
+      );
+
+#### fs promise module
+
+      const fs = require("node:fs/promises");
+      
+      fs.readFile("./greet.txt", "utf-8")
+        .then((data) => console.log(data))
+        .catch((err) => console.log(err));
+
+async-await
+
+    const readFile = async () => {
+      try {
+        const data = await fs.readFile("./greet.txt", "utf-8");
+        console.log(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    
+    readFile();
+
+## Streams
+
+    const fs = require("node:fs");
+    
+    const readableStream = fs.createReadStream("./greet.txt",{
+        encoding:'utf-8',
+    });
+    
+    const writableStream = fs.createWriteStream("./greet2.txt");
+    
+    // readableStream emits a data event
+    readableStream.on("data",(chunk)=>{
+        console.log(chunk);
+        writableStream.write(chunk);
+    });
+
+## Pipes
+- connects a readable stream to a writable stream.
+
+      const fs = require("node:fs");
+      
+      const readableStream = fs.createReadStream("./greet.txt",{
+          encoding:'utf-8',
+      });
+      
+      const writableStream = fs.createWriteStream("./greet2.txt");
+      
+      readableStream.pipe(writableStream);
+
+
+
+
+
+
+  
+
+
 
