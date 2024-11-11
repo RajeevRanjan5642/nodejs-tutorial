@@ -40,7 +40,20 @@
 
 ## Node.js JavaScript Runtime 
 - It consists of V8, libuv, C/C++ features, JS library (core modules such as fs).
-- libuv is a multi-platform support library primarily designed for asynchronous I/O operations.
+  
+## libuv
+- libuv is a cross platform open source library written in C language which handles asynchronous non-blocking operations in Node.js using thread pool and event loop.
+- The CPU intensive tasks (CPU bound operations) such as file operations, password hashing are offloaded to libuv's thread pool from main thread to avoid blocking the main thread. They run on separate threads parallely in libuv's thread pool.
+- libuv's thread pool has 4 threads by default.
+- We can increase the thread pool size :
+  
+      process.env.UV_THREADPOOL_SIZE = <size>;
+  
+- If we increase the thread pool size beyond the no. of CPU cores, then the time to execute each thread increases significantly since os has to switch b/w the threads in order to provide each thread an equal amt. of CPU time.
+- Hence increasing the thread pool size can help improve the performance but is limited by the no. of available CPU cores.
+
+## Code Execution in Node.js
+- 
 
 ## Difference b/w Node.js and Browser
 - In Node.js we don't have the document, window and all the other objects that are provided by the window.
@@ -337,15 +350,14 @@ async-await
         console.log("Server is listening on port 3000");
       });
 
+## Web Framework
+- A framework simply abstracts the lower level code allowing you to focus on the requirements than the code itself. For example, Angular, React, Vue are all framework/libraries that help you build user interfaces without having to rely on the lower level DOM API in JavaScript.
 
-    
+- There are frameworks to build web or mobile applications without having to rely on the HTTP module in Node.js. For e.g. express,nest,hapi,koa,sails. 
 
+-They are built on top of the HTTP module making it easier for you to implement all the features.
 
-
-
-
-
-  
-
-
-
+## Single-threaded
+- A thread is simply a process that your javascript program can use to run a task.
+- Each thread can only do one task at a time.
+- JavaScript has just the one thread called the main thread for executing any code.
