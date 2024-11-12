@@ -57,10 +57,21 @@
 ![code](https://github.com/RajeevRanjan5642/nodejs-tutorial/blob/main/Screenshot%202024-11-11%20200320.png)
 
 ## Event Loop
+
 - It is a C program and is part of libuv.
 - A design pattern that coordinates the execution of synchronous and asynchronous code in Node.js.
-- 
-
+- Event loop is a loop that is alive as long as your Node.js app is up and running.
+- There are 6 different queues each holding different callback functions which eventually need to be executed on the call stack.
+1. timer queue : callbacks associated with setTimeout/setInterval functions.
+2. I/O queue : I/O callbacks.
+3. check queue : callback associated with setImmediate function.
+4. close queue : callbacks associated with close event.
+5. nextTick queue : process nextTick callbacks.
+6. promise queue : native javascript promise callbacks.
+   
+- nextTick queue and promise queue are part of microtask queue.
+- Execution order : microtask queue -> timer queue -> microtask queue -> I/O queue -> microtask queue -> check queue -> microtask queue -> close queue -> microtask queue
+- callback functions are executed only when the call stack is empty. The normal flow of execution will not be interrupted to run a callback function.
 
 ## Difference b/w Node.js and Browser
 - In Node.js we don't have the document, window and all the other objects that are provided by the window.
@@ -368,3 +379,67 @@ async-await
 - A thread is simply a process that your javascript program can use to run a task.
 - Each thread can only do one task at a time.
 - JavaScript has just the one thread called the main thread for executing any code.
+
+## npm
+- It is the world's largest software library (registry) containing code packages written by various developers.
+- It is a software package manager.
+- Other package managers include yarn, pnpm etc.
+- npm is the default package manager for Node.js.
+- It comes along with Node.js. You don't need to install it separately.
+
+## package.json
+- package.json is npm's configuration file.
+- It is a configuration file that typically lives in the root directory of your package and holds various metadata relevant to the package.
+- It is the central place to configure and describe how to interact with and run your package.
+- We can create package.json file manually or using CLI.
+- To create package.json file using CLI (Command Line Interface), we can use the command :
+
+      npm init
+  
+  or (if you want to stick with the default values)
+
+      npm init --yes
+
+  - package.json
+
+        {
+          "name": "nodejs-tutorial",
+          "version": "1.0.0",
+          "main": "index.js",
+          "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1"
+          },
+          "keywords": [],
+          "author": "",
+          "license": "ISC",
+          "description": ""
+        }
+
+## install packages
+
+- We can install packages locally using the following command:
+
+      npm i <package-name>
+
+- To uninstall, use the following command:
+    
+      npm uninstall <package-name>
+      
+- To insall a package globally, use the following command:
+
+      npm i -g <package-name>
+
+- To uninstall, use the following command:
+
+       npm uninstall -g <package-name>
+
+- To install a package as dev dependency, use the following command:
+
+      npm i <package-name> -D
+
+## using packages
+for e.g. upper-case package
+
+    const {upperCase} = require('upper-case');
+    console.log(upperCase("Hello World"));
+
