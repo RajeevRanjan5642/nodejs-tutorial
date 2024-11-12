@@ -391,8 +391,8 @@ async-await
 - package.json is npm's configuration file.
 - It is a configuration file that typically lives in the root directory of your package and holds various metadata relevant to the package.
 - It is the central place to configure and describe how to interact with and run your package.
-- We can create package.json file manually or using CLI.
-- To create package.json file using CLI (Command Line Interface), we can use the command :
+- We can create package.json file manually or using npm CLI.
+- To create package.json file using npm CLI (Command Line Interface), we can use the command :
 
       npm init
   
@@ -443,3 +443,15 @@ for e.g. upper-case package
     const {upperCase} = require('upper-case');
     console.log(upperCase("Hello World"));
 
+## npm Scripts
+- An npm script is a convenient way to bundle common commands for use in a project.
+- Common use cases for npm scripts include building your project, starting a development server etc.
+
+- npm scripts are executed using the following command:
+
+      npm run <SCRIPT_NAME>
+
+## CLI
+- CLI stands for Command Line Interface.
+- CLI is a program that we can run from the terminal.
+- for e.g. npm, git
